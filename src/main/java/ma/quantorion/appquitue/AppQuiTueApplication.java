@@ -8,9 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import ma.quantorion.appquitue.domain.PersonnelService;
 import ma.quantorion.appquitue.model.Personnel;
 import ma.quantorion.appquitue.repository.PersonnelRepository;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-public class AppQuiTueApplication implements CommandLineRunner{
+@EnableSwagger2
+public class AppQuiTueApplication implements CommandLineRunner {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(AppQuiTueApplication.class, args);
