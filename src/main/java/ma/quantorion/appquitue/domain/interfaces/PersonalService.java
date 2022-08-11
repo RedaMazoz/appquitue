@@ -1,4 +1,4 @@
-package ma.quantorion.appquitue.domain;
+package ma.quantorion.appquitue.domain.interfaces;
 
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;

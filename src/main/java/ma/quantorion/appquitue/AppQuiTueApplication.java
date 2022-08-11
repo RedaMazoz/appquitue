@@ -7,7 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import ma.quantorion.appquitue.domain.PersonalService;
+import ma.quantorion.appquitue.domain.interfaces.PersonalService;
 import ma.quantorion.appquitue.model.Personal;
 import ma.quantorion.appquitue.repository.PersonalRepository;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;

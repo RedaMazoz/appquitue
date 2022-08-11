@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import ma.quantorion.appquitue.assembler.PersonalModelAssembler;
 import ma.quantorion.appquitue.controller.PersonalController;
+import ma.quantorion.appquitue.domain.interfaces.PersonalService;
 import ma.quantorion.appquitue.exception.PersonalNotFoundException;
 import ma.quantorion.appquitue.model.Personal;
 import ma.quantorion.appquitue.repository.PersonalRepository;

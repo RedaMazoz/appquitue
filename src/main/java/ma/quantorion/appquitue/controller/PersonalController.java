@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ma.quantorion.appquitue.domain.PersonalService;
+import ma.quantorion.appquitue.domain.interfaces.PersonalService;
 import ma.quantorion.appquitue.model.Personal;
 
 @RestController
@@ -24,39 +24,38 @@ public class PersonalController
 {
 	
 	@Autowired
-	PersonalService PersonalService;
-	
+	PersonalService personalService;
 	
 	
 	@GetMapping("Personals")
 	public CollectionModel<EntityModel<Personal>> getPersonals()
 	{
-		return PersonalService.getPersonals();
+		return personalService.getPersonals();
 	}
 	
 	@GetMapping("Personals/{id}")
 	public EntityModel<Personal> getPersonal(@PathVariable Long id)
 	{
-		return PersonalService.getPersonal(id);
+		return personalService.getPersonal(id);
 	}
 	
 	@PostMapping("Personals")
-	public void addPersonal(@RequestBody Personal Personal)
+	public void addPersonal(@RequestBody Personal personal)
 	{
-		PersonalService.addPersonal(Personal);
+		personalService.addPersonal(personal);
 		
 	}
 	
 	@PutMapping("Personals/{id}")
 	public ResponseEntity<?> updatePersonal(@PathVariable Long id, @RequestBody Personal nouveauPersonal)
 	{
-		return PersonalService.updatePersonal(id, nouveauPersonal);
+		return personalService.updatePersonal(id, nouveauPersonal);
 	}
 	
 	@DeleteMapping("Personals/{id}")
 	public ResponseEntity<?> deletePersonal(@PathVariable Long id)
 	{
-		return PersonalService.deletePersonal(id);
+		return personalService.deletePersonal(id);
 	}
 
 }
