@@ -56,3 +56,5 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+personalrest/docker-compose.yml
+personalrest/docker-compose - Copy.yml

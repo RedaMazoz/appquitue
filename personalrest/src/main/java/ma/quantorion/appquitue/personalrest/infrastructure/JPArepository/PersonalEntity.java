@@ -1,8 +1,11 @@
 package ma.quantorion.appquitue.personalrest.infrastructure.JPArepository;
 
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -112,6 +115,21 @@ public class PersonalEntity
 	
 	@Column(name="affectation_reference")
 	private String affectationReference;
+	
+	@ElementCollection
+	private List<CondamnationEntity> condamnations;
+	@ElementCollection
+	private List<DiplomaEntity> diplomas;
+	@ElementCollection
+	private List<InjuryEntity> injuries;
+	@ElementCollection
+	private List<InternshipEntity> internships;
+	@ElementCollection
+	private List<MissionEntity> missions;
+	@ElementCollection
+	private List<PermissionEntity> permissions;
+	@ElementCollection
+	private List<PunishmentEntity> punishments;
 
 	public PersonalEntity(String firstName, String lastName, int gsmNumber, Date birthdate, String birthplace,
 			String province, String grade, Date engagementDate, String govId, String bloodType, String address,
@@ -119,7 +137,7 @@ public class PersonalEntity
 			String addressPersonWhenAccident, String contactPersonWhenAccident, String wifeAddress, String wifeJob,
 			String wifeFullname, String mumJob, String mumFullname, String dadJob, String dadFullname, int childsCount,
 			String familySituation, int affectationId, String unit, String currentFunction, Date affectationDate,
-			String affectationReference) {
+			String affectationReference, List<CondamnationEntity> condamnations, List<DiplomaEntity> diplomas, List<InjuryEntity> injuries, List<InternshipEntity> internships, List<MissionEntity> missions, List<PermissionEntity> permissions, List<PunishmentEntity> punishments) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -154,6 +172,14 @@ public class PersonalEntity
 		this.currentFunction = currentFunction;
 		this.affectationDate = affectationDate;
 		this.affectationReference = affectationReference;
+		
+		this.condamnations = condamnations;
+		this.diplomas = diplomas;
+		this.injuries = injuries;
+		this.internships = internships;
+		this.missions = missions;
+		this.permissions = permissions;
+		this.punishments = punishments;
 	}
 	
 	public PersonalEntity(Personal personal) {
@@ -191,6 +217,28 @@ public class PersonalEntity
 		this.currentFunction = personal.getCurrentFunction();
 		this.affectationDate = personal.getAffectationDate();
 		this.affectationReference = personal.getAffectationReference();
+		
+		this.condamnations = personal.getCondamnations().stream()
+				.map(condamnation -> { return new CondamnationEntity(condamnation);})
+				.collect(Collectors.toList());
+		this.diplomas = personal.getDiplomas().stream()
+				.map(diploma -> { return new DiplomaEntity(diploma);})
+				.collect(Collectors.toList());
+		this.injuries = personal.getInjuries().stream()
+				.map(injury -> { return new InjuryEntity(injury);})
+				.collect(Collectors.toList());
+		this.internships = personal.getInternships().stream()
+				.map(internship -> { return new InternshipEntity(internship);})
+				.collect(Collectors.toList());
+		this.missions = personal.getMissions().stream()
+				.map(mission -> { return new MissionEntity(mission);})
+				.collect(Collectors.toList());
+		this.permissions = personal.getPermissions().stream()
+				.map(permission -> { return new PermissionEntity(permission);})
+				.collect(Collectors.toList());
+		this.punishments = personal.getPunishments().stream()
+				.map(punishment -> { return new PunishmentEntity(punishment);})
+				.collect(Collectors.toList());;
 	}
 	
 	public Personal toPersonal() {
@@ -200,7 +248,31 @@ public class PersonalEntity
 				addressPersonWhenAccident, contactPersonWhenAccident, wifeAddress, wifeJob,
 				wifeFullname, mumJob, mumFullname, dadJob, dadFullname, childsCount,
 				familySituation, affectationId, unit, currentFunction, affectationDate,
-				affectationReference);
+				affectationReference,
+				
+				
+				condamnations.stream()
+				.map(condamnationEntity -> { return condamnationEntity.toCondamnation();})
+				.collect(Collectors.toList()),
+				diplomas.stream()
+				.map(diplomaEntity -> { return diplomaEntity.toDiploma();})
+				.collect(Collectors.toList()),
+				injuries.stream()
+				.map(injuryEntity -> { return injuryEntity.toInjury();})
+				.collect(Collectors.toList()),
+				internships.stream()
+				.map(internshipEntity -> { return internshipEntity.toInternship();})
+				.collect(Collectors.toList()),
+				missions.stream()
+				.map(missionEntity -> { return missionEntity.toMission();})
+				.collect(Collectors.toList()),
+				permissions.stream()
+				.map(permissionEntity -> { return permissionEntity.toPermission();})
+				.collect(Collectors.toList()),
+				punishments.stream()
+				.map(punishmentEntity -> { return punishmentEntity.toPunishment();})
+				.collect(Collectors.toList())
+				);
         return personal;
     }
 	

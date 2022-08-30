@@ -1,0 +1,32 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: personalrest
+spec:
+  selector:
+    app: personalrest
+  ports:
+  - protocol: TCP
+    port: 8080
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: personalrest
+spec:
+  selector:
+      matchLabels:
+        app: personalrest
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: personalrest
+    spec:
+      containers:
+        - name: personalrest
+          image: personalrest-container:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080

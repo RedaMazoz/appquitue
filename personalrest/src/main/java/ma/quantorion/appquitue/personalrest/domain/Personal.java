@@ -1,6 +1,7 @@
 package ma.quantorion.appquitue.personalrest.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -76,6 +77,14 @@ public class Personal
 	private Date affectationDate;
 	
 	private String affectationReference;
+	
+	private List<Condamnation> condamnations;
+	private List<Diploma> diplomas;
+	private List<Injury> injuries;
+	private List<Internship> internships;
+	private List<Mission> missions;
+	private List<Permission> permissions;
+	private List<Punishment> punishments;
 
 	public Personal(Long personalId, String firstName, String lastName, int gsmNumber, Date birthdate, String birthplace,
 			String province, String grade, Date engagementDate, String govId, String bloodType, String address,
@@ -83,7 +92,7 @@ public class Personal
 			String addressPersonWhenAccident, String contactPersonWhenAccident, String wifeAddress, String wifeJob,
 			String wifeFullname, String mumJob, String mumFullname, String dadJob, String dadFullname, int childsCount,
 			String familySituation, int affectationId, String unit, String currentFunction, Date affectationDate,
-			String affectationReference) {
+			String affectationReference, List<Condamnation> condamnations, List<Diploma> diplomas, List<Injury> injuries, List<Internship> internships, List<Mission> missions, List<Permission> permissions, List<Punishment> punishments) {
 		super();
 		this.personalId = personalId;
 		this.firstName = firstName;
@@ -119,6 +128,14 @@ public class Personal
 		this.currentFunction = currentFunction;
 		this.affectationDate = affectationDate;
 		this.affectationReference = affectationReference;
+		
+		this.condamnations = condamnations;
+		this.diplomas = diplomas;
+		this.injuries = injuries;
+		this.internships = internships;
+		this.missions = missions;
+		this.permissions = permissions;
+		this.punishments = punishments;
 	}
 	
 	
