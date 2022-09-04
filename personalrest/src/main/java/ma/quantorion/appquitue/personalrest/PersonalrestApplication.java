@@ -34,9 +34,9 @@ public class PersonalrestApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception
 	{
-		rep.save(new Personal(1L,"Reda", "Mazoz", 06000000, new Date(10,10,1960), "Fes",
-		"Sefrou", "sergent", new Date (10,10,1980), "CD456789", "AB-", "Avenue Mohammed El-Fassi, Derb el-khokha, Hay elhaj",
-		"photo.jpg", "Fes", "matricule", 123456, "ccpId", 0611111111,
+		rep.save(new Personal(1L,"AAAeda", "AMazoz", 06000000, new Date(9,10,1960), "AFes",
+		"ASefrou", "Asergent", new Date (9,10,1980), "ACD456789", "AAB-", "AAvenue Mohammed El-Fassi, Derb el-khokha, Hay elhaj",
+		"Aphoto.jpg", "AFes", "Amatricule", 123456, "AccpId", 0611111111,
 		"Avenue Hassan II, derb lkhobza", "Hassan Ben Jawad", "Avenue Mohamed El-Fassi, Derb el-khoka", "Couturier",
 		"Fatma Bent Mohammed", "Femme au foyer", "Khadija Doughri", "Pere au Foyer", "Mohammed Ghazouani", 2,
 		"celibitaire", 456789123, "unit", "currentFunction", new Date(5,10,1986),
