@@ -2,8 +2,6 @@ package ma.quantorion.appquitue.authentificationrest.domain;
 
 import java.util.List;
 
-import javax.persistence.ElementCollection;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ma.quantorion.appquitue.authentificationrest.domain.validation.annotations.PasswordMatches;

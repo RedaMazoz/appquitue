@@ -4,13 +4,12 @@ package ma.quantorion.appquitue.authentificationrest.infrastructure.JPArepositor
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,7 +30,7 @@ public class UserEntity
 	
 	private String password;
 	
-	@ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.REMOVE }, fetch = FetchType.EAGER)
+	@OneToMany(fetch = FetchType.EAGER)
 	private List<RoleEntity> userRoles;
 	
 	public UserEntity(String email, String password, List<RoleEntity> userRoles) {

@@ -6,9 +6,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import ma.quantorion.appquitue.authentificationrest.infrastructure.JPArepository.UserEntity;
-import ma.quantorion.appquitue.authentificationrest.infrastructure.JPArepository.UserJPARepository;
-
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 	@Autowired

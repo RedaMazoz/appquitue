@@ -4,6 +4,8 @@ import java.util.Set;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 
 import lombok.Data;
@@ -20,7 +22,8 @@ public class RoleEntity
 	@Id
 	private String roleName;
 	
-	@ElementCollection
+	@ElementCollection(fetch=FetchType.EAGER)
+	@Enumerated
 	private Set<ApplicationUserPermission> rolePermissions;
 	
 	public RoleEntity(String roleName, Set<ApplicationUserPermission> rolePermissions) {

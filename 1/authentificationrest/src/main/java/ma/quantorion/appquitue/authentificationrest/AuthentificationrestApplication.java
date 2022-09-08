@@ -34,10 +34,14 @@ public class AuthentificationrestApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception
 	{
-//		Role admin = new Role("ROLE_TESTP", Sets.newHashSet( ApplicationUserPermission.PUNISHMENT_READ, ApplicationUserPermission.PUNISHMENT_WRITE));
+//		ApplicationUserPermission df = ApplicationUserPermission.PUNISHMENT_READ;
+//		ApplicationUserPermission fd = ApplicationUserPermission.PUNISHMENT_WRITE;
+//		Role admin = new Role("ROLE_TESTP", Sets.newHashSet( df, fd));
+//		rep2.save(admin);
 //		List<Role> roleList = new ArrayList<Role>();
 //		roleList.add(admin);
-//		rep.save(new User(2L, "test2@test.test", "test2", roleList));
+//		
+//		rep.save(new User(1L, "test@test.test", "test", roleList));
 	}
 
 }

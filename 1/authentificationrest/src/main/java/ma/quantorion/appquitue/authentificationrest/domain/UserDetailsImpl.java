@@ -19,9 +19,26 @@ public class UserDetailsImpl implements UserDetails {
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
+		
 		List<GrantedAuthority> authorities = new ArrayList<>();
+		
+		
+		List<String> privileges = new ArrayList<>();
+		List<ApplicationUserPermission> collection = new ArrayList<>();
+		
 		for(final Role role : user.getUserRoles()) {
-			authorities.add(new SimpleGrantedAuthority(role.getRoleName()));
+			privileges.add(role.getRoleName());
+			
+			collection.addAll(role.getRolePermissions());
+		}
+		for(final ApplicationUserPermission item : collection)
+		{
+			privileges.add(item.getPermission());
+		}
+		
+		for(String privilege : privileges)
+		{
+			authorities.add(new SimpleGrantedAuthority(privilege));
 		}
 		return authorities;
 	}

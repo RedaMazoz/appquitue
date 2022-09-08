@@ -25,7 +25,7 @@ public class UserController
 	
 	
 	@GetMapping("Users")
-	//@PreAuthorize("hasAuthority('punishment:read')")
+	@PreAuthorize("hasAuthority('punishment:read')")
 	public CollectionModel<EntityModel<User>> getUsers()
 	{
 		System.out.println("d");
