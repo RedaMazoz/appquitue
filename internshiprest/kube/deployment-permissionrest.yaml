@@ -1,0 +1,32 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: internshiprest
+spec:
+  selector:
+    app: internshiprest
+  ports:
+  - protocol: TCP
+    port: 8094
+    targetPort: 8094
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: internshiprest
+spec:
+  selector:
+      matchLabels:
+        app: internshiprest
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: internshiprest
+    spec:
+      containers:
+        - name: internshiprest
+          image: internshiprest:0.0.1-SNAPSHOT
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8094

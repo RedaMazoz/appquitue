@@ -1,0 +1,32 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: injuryrest
+spec:
+  selector:
+    app: injuryrest
+  ports:
+  - protocol: TCP
+    port: 8095
+    targetPort: 8095
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: injuryrest
+spec:
+  selector:
+      matchLabels:
+        app: injuryrest
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: injuryrest
+    spec:
+      containers:
+        - name: injuryrest
+          image: injuryrest:0.0.1-SNAPSHOT
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8095

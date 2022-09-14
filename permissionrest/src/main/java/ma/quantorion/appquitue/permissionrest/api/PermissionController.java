@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,24 +26,21 @@ public class PermissionController
 	
 	
 	@GetMapping("Permissions")
+	@PreAuthorize("hasAuthority('permission:read')")
 	public CollectionModel<EntityModel<Permission>> getPermissions()
 	{
 		return permissionService.getPermissions();
 	}
 	
-	@GetMapping("PersonTest")
-	public String getPermission()
-	{
-		return "Reda Mazoz";
-	}
-	
 	@GetMapping("Permissions/{id}")
+	@PreAuthorize("hasAuthority('permission:read')")
 	public EntityModel<Permission> getPermission(@PathVariable Long id)
 	{
 		return permissionService.getPermission(id);
 	}
 	
 	@PostMapping("Permissions")
+	@PreAuthorize("hasAuthority('permission:write')")
 	public void addPermission(@RequestBody Permission permission)
 	{
 		permissionService.addPermission(permission);
@@ -50,12 +48,14 @@ public class PermissionController
 	}
 	
 	@PutMapping("Permissions/{id}")
+	@PreAuthorize("hasAuthority('permission:write')")
 	public ResponseEntity<?> updatePermission(@PathVariable Long id, @RequestBody Permission nouveauPermission)
 	{
 		return permissionService.updatePermission(id, nouveauPermission);
 	}
 	
 	@DeleteMapping("Permissions/{id}")
+	@PreAuthorize("hasAuthority('permission:write')")
 	public ResponseEntity<?> deletePermission(@PathVariable Long id)
 	{
 		return permissionService.deletePermission(id);

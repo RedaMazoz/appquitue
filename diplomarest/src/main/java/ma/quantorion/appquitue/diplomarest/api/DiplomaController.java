@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,24 +26,21 @@ public class DiplomaController
 	
 	
 	@GetMapping("Diplomas")
+	@PreAuthorize("hasAuthority('diploma:read')")
 	public CollectionModel<EntityModel<Diploma>> getDiplomas()
 	{
 		return diplomaService.getDiplomas();
 	}
 	
-	@GetMapping("PersonTest")
-	public String getDiploma()
-	{
-		return "Reda Mazoz";
-	}
-	
 	@GetMapping("Diplomas/{id}")
+	@PreAuthorize("hasAuthority('diploma:read')")
 	public EntityModel<Diploma> getDiploma(@PathVariable Long id)
 	{
 		return diplomaService.getDiploma(id);
 	}
 	
 	@PostMapping("Diplomas")
+	@PreAuthorize("hasAuthority('diploma:write')")
 	public void addDiploma(@RequestBody Diploma diploma)
 	{
 		diplomaService.addDiploma(diploma);
@@ -50,12 +48,14 @@ public class DiplomaController
 	}
 	
 	@PutMapping("Diplomas/{id}")
+	@PreAuthorize("hasAuthority('diploma:write')")
 	public ResponseEntity<?> updateDiploma(@PathVariable Long id, @RequestBody Diploma nouveauDiploma)
 	{
 		return diplomaService.updateDiploma(id, nouveauDiploma);
 	}
 	
 	@DeleteMapping("Diplomas/{id}")
+	@PreAuthorize("hasAuthority('diploma:write')")
 	public ResponseEntity<?> deleteDiploma(@PathVariable Long id)
 	{
 		return diplomaService.deleteDiploma(id);

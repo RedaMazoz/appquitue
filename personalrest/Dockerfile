@@ -1,5 +1,4 @@
-FROM maven:3.8.2-jdk-8
-WORKDIR /personalrest
-COPY . .
-RUN mvn clean install
-CMD mvn spring-boot:run
+FROM openjdk:8-jdk-alpine
+MAINTAINER baeldung.com
+COPY target/personalrest-0.0.1-SNAPSHOT.jar personalrest-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","/personalrest-0.0.1-SNAPSHOT.jar"]

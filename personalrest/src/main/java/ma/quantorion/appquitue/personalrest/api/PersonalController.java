@@ -5,7 +5,7 @@ import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-//import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,7 +27,7 @@ public class PersonalController
 	
 	
 	@GetMapping("Personals")
-	@PreAuthorize("hasAuthority('punishment:write')")
+	@PreAuthorize("hasAuthority('personal:read')")
 	public CollectionModel<EntityModel<Personal>> getPersonals()
 	{
 		return personalService.getPersonals();
@@ -40,12 +40,14 @@ public class PersonalController
 	}
 	
 	@GetMapping("Personals/{id}")
+	@PreAuthorize("hasAuthority('personal:read')")
 	public EntityModel<Personal> getPersonal(@PathVariable Long id)
 	{
 		return personalService.getPersonal(id);
 	}
 	
 	@PostMapping("Personals")
+	@PreAuthorize("hasAuthority('personal:write')")
 	public void addPersonal(@RequestBody Personal personal)
 	{
 		personalService.addPersonal(personal);
@@ -53,12 +55,14 @@ public class PersonalController
 	}
 	
 	@PutMapping("Personals/{id}")
+	@PreAuthorize("hasAuthority('personal:write')")
 	public ResponseEntity<?> updatePersonal(@PathVariable Long id, @RequestBody Personal nouveauPersonal)
 	{
 		return personalService.updatePersonal(id, nouveauPersonal);
 	}
 	
 	@DeleteMapping("Personals/{id}")
+	@PreAuthorize("hasAuthority('personal:write')")
 	public ResponseEntity<?> deletePersonal(@PathVariable Long id)
 	{
 		return personalService.deletePersonal(id);

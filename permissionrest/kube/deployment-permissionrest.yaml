@@ -1,0 +1,32 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: permissionrest
+spec:
+  selector:
+    app: permissionrest
+  ports:
+  - protocol: TCP
+    port: 8092
+    targetPort: 8092
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: permissionrest
+spec:
+  selector:
+      matchLabels:
+        app: permissionrest
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: permissionrest
+    spec:
+      containers:
+        - name: permissionrest
+          image: permissionrest:0.0.1-SNAPSHOT
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8092

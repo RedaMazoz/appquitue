@@ -1,0 +1,32 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: missionrest
+spec:
+  selector:
+    app: missionrest
+  ports:
+  - protocol: TCP
+    port: 8093
+    targetPort: 8093
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: missionrest
+spec:
+  selector:
+      matchLabels:
+        app: missionrest
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: missionrest
+    spec:
+      containers:
+        - name: missionrest
+          image: missionrest:0.0.1-SNAPSHOT
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8093

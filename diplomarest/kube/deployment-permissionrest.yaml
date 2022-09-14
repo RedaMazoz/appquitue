@@ -1,0 +1,32 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: diplomarest
+spec:
+  selector:
+    app: diplomarest
+  ports:
+  - protocol: TCP
+    port: 8096
+    targetPort: 8096
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: diplomarest
+spec:
+  selector:
+      matchLabels:
+        app: diplomarest
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: diplomarest
+    spec:
+      containers:
+        - name: diplomarest
+          image: diplomarest:0.0.1-SNAPSHOT
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8096

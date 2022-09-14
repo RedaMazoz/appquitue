@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  diplomarest:
+    image: diplomarest:0.0.1-SNAPSHOT
+    restart: on-failure
+    env_file: ./.env
+    ports:
+      - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
+    stdin_open: true
+    tty: true

@@ -1,0 +1,32 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: punishmentrest
+spec:
+  selector:
+    app: punishmentrest
+  ports:
+  - protocol: TCP
+    port: 8091
+    targetPort: 8091
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: punishmentrest
+spec:
+  selector:
+      matchLabels:
+        app: punishmentrest
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: punishmentrest
+    spec:
+      containers:
+        - name: punishmentrest
+          image: punishmentrest:0.0.1-SNAPSHOT
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8091

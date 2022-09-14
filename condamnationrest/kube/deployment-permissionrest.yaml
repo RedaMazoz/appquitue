@@ -1,0 +1,32 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: condamnationrest
+spec:
+  selector:
+    app: condamnationrest
+  ports:
+  - protocol: TCP
+    port: 8097
+    targetPort: 8097
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: condamnationrest
+spec:
+  selector:
+      matchLabels:
+        app: condamnationrest
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: condamnationrest
+    spec:
+      containers:
+        - name: condamnationrest
+          image: condamnationrest:0.0.1-SNAPSHOT
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8097
