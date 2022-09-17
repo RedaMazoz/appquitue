@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ma.quantorion.appquitue.injuryrest.domain.Injury;
+import ma.quantorion.appquitue.injuryrest.domain.InjuryService;
 
 @RestController
 @RequestMapping("api/")

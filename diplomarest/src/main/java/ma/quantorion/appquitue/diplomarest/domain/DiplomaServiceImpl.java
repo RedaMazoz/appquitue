@@ -14,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import ma.quantorion.appquitue.diplomarest.api.DiplomaController;
-import ma.quantorion.appquitue.diplomarest.api.DiplomaService;
 import ma.quantorion.appquitue.diplomarest.domain.assembler.DiplomaModelAssembler;
 import ma.quantorion.appquitue.diplomarest.domain.exception.DiplomaNotFoundException;
 

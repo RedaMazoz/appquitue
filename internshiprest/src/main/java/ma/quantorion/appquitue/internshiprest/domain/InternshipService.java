@@ -1,10 +1,8 @@
-package ma.quantorion.appquitue.internshiprest.api;
+package ma.quantorion.appquitue.internshiprest.domain;
 
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
-
-import ma.quantorion.appquitue.internshiprest.domain.Internship;
 
 public interface InternshipService
 {

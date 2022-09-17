@@ -1,10 +1,8 @@
-package ma.quantorion.appquitue.permissionrest.api;
+package ma.quantorion.appquitue.permissionrest.domain;
 
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
-
-import ma.quantorion.appquitue.permissionrest.domain.Permission;
 
 public interface PermissionService
 {

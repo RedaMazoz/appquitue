@@ -1,10 +1,8 @@
-package ma.quantorion.appquitue.diplomarest.api;
+package ma.quantorion.appquitue.diplomarest.domain;
 
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
-
-import ma.quantorion.appquitue.diplomarest.domain.Diploma;
 
 public interface DiplomaService
 {

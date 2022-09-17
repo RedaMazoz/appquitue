@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ma.quantorion.appquitue.diplomarest.domain.Diploma;
+import ma.quantorion.appquitue.diplomarest.domain.DiplomaService;
 
 @RestController
 @RequestMapping("api/")

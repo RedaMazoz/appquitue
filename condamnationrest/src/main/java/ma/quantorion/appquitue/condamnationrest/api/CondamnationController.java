@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ma.quantorion.appquitue.condamnationrest.domain.Condamnation;
+import ma.quantorion.appquitue.condamnationrest.domain.CondamnationService;
 
 @RestController
 @RequestMapping("api/")

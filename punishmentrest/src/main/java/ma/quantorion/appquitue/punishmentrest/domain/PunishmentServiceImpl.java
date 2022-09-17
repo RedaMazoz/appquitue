@@ -14,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import ma.quantorion.appquitue.punishmentrest.api.PunishmentController;
-import ma.quantorion.appquitue.punishmentrest.api.PunishmentService;
 import ma.quantorion.appquitue.punishmentrest.domain.assembler.PunishmentModelAssembler;
 import ma.quantorion.appquitue.punishmentrest.domain.exception.PunishmentNotFoundException;
 

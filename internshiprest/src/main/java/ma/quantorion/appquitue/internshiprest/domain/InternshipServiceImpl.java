@@ -14,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import ma.quantorion.appquitue.internshiprest.api.InternshipController;
-import ma.quantorion.appquitue.internshiprest.api.InternshipService;
 import ma.quantorion.appquitue.internshiprest.domain.assembler.InternshipModelAssembler;
 import ma.quantorion.appquitue.internshiprest.domain.exception.InternshipNotFoundException;
 

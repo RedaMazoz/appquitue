@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ma.quantorion.appquitue.permissionrest.domain.Permission;
+import ma.quantorion.appquitue.permissionrest.domain.PermissionService;
 
 @RestController
 @RequestMapping("api/")

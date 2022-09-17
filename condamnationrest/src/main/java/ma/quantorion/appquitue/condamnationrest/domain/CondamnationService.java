@@ -1,10 +1,8 @@
-package ma.quantorion.appquitue.condamnationrest.api;
+package ma.quantorion.appquitue.condamnationrest.domain;
 
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
-
-import ma.quantorion.appquitue.condamnationrest.domain.Condamnation;
 
 public interface CondamnationService
 {

@@ -14,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import ma.quantorion.appquitue.condamnationrest.api.CondamnationController;
-import ma.quantorion.appquitue.condamnationrest.api.CondamnationService;
 import ma.quantorion.appquitue.condamnationrest.domain.assembler.CondamnationModelAssembler;
 import ma.quantorion.appquitue.condamnationrest.domain.exception.CondamnationNotFoundException;
 

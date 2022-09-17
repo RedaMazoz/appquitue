@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import ma.quantorion.appquitue.punishmentrest.domain.Punishment;
+import ma.quantorion.appquitue.punishmentrest.domain.PunishmentService;
 
 @RestController
 @RequestMapping("api/")

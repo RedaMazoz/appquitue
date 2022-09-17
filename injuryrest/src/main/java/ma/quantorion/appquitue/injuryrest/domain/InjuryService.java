@@ -1,10 +1,8 @@
-package ma.quantorion.appquitue.injuryrest.api;
+package ma.quantorion.appquitue.injuryrest.domain;
 
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
-
-import ma.quantorion.appquitue.injuryrest.domain.Injury;
 
 public interface InjuryService
 {

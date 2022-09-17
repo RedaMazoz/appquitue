@@ -1,10 +1,8 @@
-package ma.quantorion.appquitue.missionrest.api;
+package ma.quantorion.appquitue.missionrest.domain;
 
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
-
-import ma.quantorion.appquitue.missionrest.domain.Mission;
 
 public interface MissionService
 {

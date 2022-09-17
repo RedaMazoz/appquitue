@@ -14,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import ma.quantorion.appquitue.injuryrest.api.InjuryController;
-import ma.quantorion.appquitue.injuryrest.api.InjuryService;
 import ma.quantorion.appquitue.injuryrest.domain.assembler.InjuryModelAssembler;
 import ma.quantorion.appquitue.injuryrest.domain.exception.InjuryNotFoundException;
 

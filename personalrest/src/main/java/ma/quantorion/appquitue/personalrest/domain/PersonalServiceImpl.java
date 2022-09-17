@@ -14,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import ma.quantorion.appquitue.personalrest.api.PersonalController;
-import ma.quantorion.appquitue.personalrest.api.PersonalService;
 import ma.quantorion.appquitue.personalrest.domain.assembler.PersonalModelAssembler;
 import ma.quantorion.appquitue.personalrest.domain.exception.PersonalNotFoundException;
 

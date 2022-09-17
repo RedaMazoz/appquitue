@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ma.quantorion.appquitue.internshiprest.domain.Internship;
+import ma.quantorion.appquitue.internshiprest.domain.InternshipService;
 
 @RestController
 @RequestMapping("api/")

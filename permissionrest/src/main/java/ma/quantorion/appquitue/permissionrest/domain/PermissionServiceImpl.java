@@ -14,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import ma.quantorion.appquitue.permissionrest.api.PermissionController;
-import ma.quantorion.appquitue.permissionrest.api.PermissionService;
 import ma.quantorion.appquitue.permissionrest.domain.assembler.PermissionModelAssembler;
 import ma.quantorion.appquitue.permissionrest.domain.exception.PermissionNotFoundException;
 
