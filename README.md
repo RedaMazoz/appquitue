@@ -10,3 +10,4 @@ Dependencies used in this project:
 - Zuul
 - Spring Security
 - JJWT
+- Docker
