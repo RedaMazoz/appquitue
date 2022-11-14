@@ -1,4 +1,4 @@
-# appquitue
+# springboot-api-gateway-microservices-Kubernetes-without-Eureka
 
 Operator manamgement Spring Boot web application made using the Microsoft 3 Layer Microservices architecture
 Microservices are accessible after a secure, JWT Token based authentication using an API Gateway that acts as Reverse Proxy
